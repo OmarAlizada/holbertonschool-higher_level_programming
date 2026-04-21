@@ -13,4 +13,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(count))
 
     for i, arg in enumerate(argv, 1):
-        print("{}: {}".format(i, sys.argv[i]))
+        print("{}: {}".format(i, arg))
