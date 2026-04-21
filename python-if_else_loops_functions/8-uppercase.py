@@ -4,5 +4,5 @@ def uppercase(str):
         ascii_val = ord(char)
         if ascii_val >= 97 and ascii_val <= 122:
             char = chr(ascii_val - 32)
-            print("{}".format(char), end="")
-        print("")
+        print("{}".format(char), end="")
+     print("")
