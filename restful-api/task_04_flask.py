@@ -50,6 +50,7 @@ def add_user():
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
+    # Duplicate yoxlaması
     if username in users:
         return jsonify({"error": "User already exists"}), 400
 
