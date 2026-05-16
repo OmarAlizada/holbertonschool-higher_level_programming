@@ -39,18 +39,15 @@ def get_user(username):
 @app.route("/add_user", methods=["POST"])
 def add_user():
     """Add a new user via POST request with JSON payload."""
-    if not request.is_json:
-        return jsonify({"error": "Invalid JSON"}), 400
-        
-    data = request.get_json()
-    if not data:
+    data = request.get_json(silent=True)
+    if data is None:
         return jsonify({"error": "Invalid JSON"}), 400
 
     username = data.get("username")
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
-    # Duplicate yoxlaması
+    # Duplicate validation
     if username in users:
         return jsonify({"error": "User already exists"}), 400
 
