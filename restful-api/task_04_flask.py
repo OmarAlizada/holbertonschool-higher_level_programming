@@ -47,9 +47,9 @@ def add_user():
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
-    # Duplicate validation
+    # Duplicate validation - Returning 409 Conflict
     if username in users:
-        return jsonify({"error": "User already exists"}), 400
+        return jsonify({"error": "Username already exists"}), 409
 
     # Store user details in memory
     users[username] = {
